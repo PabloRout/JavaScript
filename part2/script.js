@@ -1,8 +1,10 @@
+import { log } from "console";
 import fs from "fs";
 
 fs.readFile("part2/textFile.txt", "utf-8", (err, res) => {
-  console.log(res);
+  if (!err) log(res);
+  else log(err);
 });
 
-let res = fs.readFileSync("part2/textFile.txt", "utf-8");
-console.log(res);
+const result = fs.readFileSync("part2/textFile.txt", "utf-8");
+log(result);
